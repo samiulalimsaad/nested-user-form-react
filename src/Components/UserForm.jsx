@@ -1,13 +1,11 @@
 import { Field, Form, Formik } from "formik";
 import { initialState } from "../initialState";
-import { state } from "../state";
 import Dropdown from "./Dropdown";
 
-function UserForm() {
+function UserForm({ setState }) {
     const submitHandler = (values, action) => {
-        state.push(values);
+        setState((p) => [...p, { ...values }]);
         action.resetForm();
-        console.log({ values });
     };
 
     return (
@@ -27,7 +25,7 @@ function UserForm() {
                                                 <div className="flex gap-10 flex-wrap">
                                                     {Object.keys(
                                                         initialState[type]
-                                                    ).map((property, i) =>
+                                                    ).map((property) =>
                                                         typeof initialState[
                                                             type
                                                         ][property] ===
@@ -37,10 +35,6 @@ function UserForm() {
                                                                 className="form-control w-full max-w-md"
                                                             >
                                                                 <Dropdown
-                                                                    key={
-                                                                        property +
-                                                                        i
-                                                                    }
                                                                     type={type}
                                                                     property={
                                                                         property

@@ -1,9 +1,9 @@
-export const state = [
+export const dummyState = [
     {
         personal: {
             name: "1111",
-            dof: "1111",
-            sex: "1111",
+            "date of birth": "1111",
+            gender: "1111",
             mobile: "1111",
             govtIssueId: {
                 type: "1111",

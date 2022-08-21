@@ -1,9 +1,12 @@
 import { useState } from "react";
 import Table from "./Components/Table";
 import UserForm from "./Components/UserForm";
+import { dummyState } from "./state";
 
 function App() {
     const [index, setIndex] = useState(0);
+
+    const [state, setState] = useState(dummyState);
 
     return (
         <div className="grid place-items-center h-screen p-20">
@@ -21,7 +24,7 @@ function App() {
                     Table
                 </button>
             </div>
-            {index ? <UserForm /> : <Table />}
+            {index ? <UserForm setState={setState} /> : <Table state={state} />}
         </div>
     );
 }
