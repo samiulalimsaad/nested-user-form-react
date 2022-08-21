@@ -3,7 +3,7 @@ import { initialState } from "../initialState";
 import { state } from "../state";
 import Dropdown from "./Dropdown";
 
-function Form() {
+function UserForm() {
     const submitHandler = (values, action) => {
         state.push(values);
         action.resetForm();
@@ -100,4 +100,4 @@ function Form() {
     );
 }
 
-export default Form;
+export default UserForm;
