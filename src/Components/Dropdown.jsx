@@ -10,7 +10,7 @@ const Dropdown = ({ type, property, ...props }) => {
                     <label className="label capitalize">
                         <span className="label-text text-xl"></span>
                     </label>
-                    <Dropdown
+                    <Field
                         type={type}
                         placeholder="Type here"
                         name={`${type}.${property}.${Object.keys(
@@ -39,7 +39,7 @@ const Dropdown = ({ type, property, ...props }) => {
                     <label className="label capitalize">
                         <span className="label-text text-xl"></span>
                     </label>
-                    <Dropdown
+                    <Field
                         type={type}
                         placeholder="Type here"
                         name={`${type}.${property}.${Object.keys(
